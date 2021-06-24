@@ -16,7 +16,7 @@ const state = {
   low24h: 0,
   /**
    * 币种，大写字母
-   * @example `ETH`
+   * @example `BTC` | `ETH`
    * @requires
    */
   symbol: '',
