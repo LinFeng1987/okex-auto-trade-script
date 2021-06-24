@@ -9,7 +9,7 @@ const { toFixed, toPercentage } = require('../utils/calc')
 exports.name = '打印交易信息面板'
 
 exports.apply = (ctx) => {
-  const { state, orders, emitter } = ctx
+  const { state, emitter } = ctx
 
   emitter.on('ticker', () => {
     const isDown = state.fluctuationRatio < 0
@@ -40,8 +40,7 @@ ${
 }
 
 ------------------------------
-
-${JSON.stringify(orders)}`
+`
 
     clearConsole()
     console.log(string)
