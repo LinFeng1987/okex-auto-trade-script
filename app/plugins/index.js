@@ -4,7 +4,8 @@ const okexSubscribePrivate = require('./okex-subscribe-private')
 const adjustNextPrice = require('./adjust-next-price')
 const printLog = require('./print-log')
 const triggerOrder = require('./trigger-create-order')
-const notifyToTelegram = require('./notify-to-telegram')
+const messenger = require('./messenger')
+const registerTelegramMessenger = require('./register-telegram-messenger')
 
 const plugins = [
   okexSubscribePublic,
@@ -12,7 +13,9 @@ const plugins = [
   adjustNextPrice,
   printLog,
   triggerOrder,
-  notifyToTelegram,
+  // 通知
+  messenger,
+  registerTelegramMessenger,
 ]
 
 exports.applyPlugins = (ctx) => {

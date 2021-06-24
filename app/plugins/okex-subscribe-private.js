@@ -9,13 +9,15 @@ const {
   toCeil,
   calcMinProfitUSDTPrice,
 } = require('../utils/calc')
-const { sendErrorMessage } = require('../message')
 const { removeOrderByOrderId } = require('../store/orders')
-const timestamp = Date.now() / 1000
+const { websocketErrorMessageMap } = require('../misc/websocketErrorMessageMap')
 
 exports.name = '订阅 OKEx 订单频道'
 
-exports.apply = (ctx) => {
+exports.apply = (ctx) => subscribePrivate(ctx)
+
+function subscribePrivate(ctx) {
+  const timestamp = Date.now() / 1000
   const ws = new Websocket('wss://ws.okex.com:8443/ws/v5/private')
 
   const { state, orders, setOrders, emitter } = ctx
@@ -38,7 +40,7 @@ exports.apply = (ctx) => {
   const reSubscribeCounter = createCounter(600, () => {
     ws.send(JSON.stringify(unSubscribeArg))
   })
-  const wsPingPongCounter = createCounter(25, () => ws.send('ping'))
+  const wsPingPongCounter = createCounter(23, () => ws.send('ping'))
 
   ws.on('open', () => {
     ws.send(
@@ -60,6 +62,8 @@ exports.apply = (ctx) => {
       })
     )
 
+    ws.on('error', () => subscribePrivate(ctx))
+
     ws.on('message', (msg) => {
       if (msg === 'pong') {
         wsPingPongCounter.resetCount()
@@ -74,9 +78,10 @@ exports.apply = (ctx) => {
             ws.send(JSON.stringify(subscribeArg))
           }
           if (data.event === 'error') {
-            sendErrorMessage(data).then(() => {
-              process.exit(1)
-            })
+            emitter.emit(
+              'sendErrorMessage',
+              websocketErrorMessageMap[data.code]
+            )
           }
 
           if (_get(data, 'arg.instId') === instId && data.data) {

@@ -1,12 +1,14 @@
 const Websocket = require('ws')
 const _get = require('lodash.get')
-const { sendErrorMessage } = require('../message')
 const { createCounter } = require('../utils')
 const { calcRatio } = require('../utils/calc')
+const { websocketErrorMessageMap } = require('../misc/websocketErrorMessageMap')
 
 exports.name = '订阅 OKEx 行情频道'
 
-exports.apply = (ctx) => {
+exports.apply = (ctx) => subscribePubluc(ctx)
+
+function subscribePubluc(ctx) {
   const ws = new Websocket('wss://ws.okex.com:8443/ws/v5/public')
 
   const { state, setState, emitter } = ctx
@@ -27,11 +29,14 @@ exports.apply = (ctx) => {
   const reSubscribeCounter = createCounter(60, () => {
     ws.send(JSON.stringify(unSubscribeArg))
   })
-  const wsPingPongCounter = createCounter(25, () => ws.send('ping'))
+  const wsPingPongCounter = createCounter(23, () => ws.send('ping'))
 
   ws.on('open', () => {
     ws.send(JSON.stringify(subscribeArg))
   })
+
+  ws.on('error', () => subscribePubluc(ctx))
+
   ws.on('message', (msg) => {
     if (msg === 'pong') {
       wsPingPongCounter.resetCount()
@@ -43,9 +48,7 @@ exports.apply = (ctx) => {
         ws.send(JSON.stringify(subscribeArg))
       }
       if (data.event === 'error') {
-        sendErrorMessage(data).then(() => {
-          process.exit(1)
-        })
+        emitter.emit('sendErrorMessage', websocketErrorMessageMap[data.code])
       }
 
       if (_get(data, 'arg.instId') === instId && data.data) {

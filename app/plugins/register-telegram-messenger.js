@@ -3,27 +3,24 @@ const { default: axios } = require('axios')
 const kleur = require('kleur')
 
 const token = process.env.telegram_bot_token
-const chatId = process.env.telegram_bot_chat_id
-
+const chat_id = process.env.telegram_bot_chat_id
 const url = `https://api.telegram.org/bot${token}`
 
-exports.sendMessage = (text) => {
-  if (!token || !chatId) {
-    return new Promise()
-  }
+exports.name = '注册 Telegram 通知'
+
+exports.when = () => token && chat_id
+
+exports.apply = (ctx) => {
+  const { emitter } = ctx
+  emitter.emit('collectMessenger', { sendMessage })
+}
+
+function sendMessage(text) {
   return axios
     .post(`${url}/sendMessage`, {
-      chat_id: chatId,
+      chat_id,
       text,
       parse_mode: 'MarkdownV2',
     })
     .catch(console.error)
-}
-
-exports.sendErrorMessage = (text) => {
-  console.log(kleur.red(text))
-  return this.sendMessage(
-    `程序已停止运行，原因如下:
-${text}`
-  )
 }
