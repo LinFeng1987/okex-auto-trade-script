@@ -1,0 +1,11 @@
+{
+  "symbol": "ETH",
+  "basePrice": 1950,
+  "amounts": [0.001, 0.002, 0.003],
+  "allow24hFluctuationRatio": 0.05,
+  "baseDecreaseRatio": 0.02,
+  "baseIncreaseRatio": 0.02,
+  "dynamicNextPrice": true,
+  "maxStep": 10,
+  "safeSellAmount": false
+}

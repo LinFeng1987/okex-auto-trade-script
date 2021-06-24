@@ -1,0 +1,20 @@
+{
+  "main": "main.js",
+  "scripts": {
+    "start": "node app/main.js"
+  },
+  "dependencies": {
+    "axios": "^0.21.1",
+    "ccxt": "^1.51.52",
+    "dotenv": "^10.0.0",
+    "kleur": "^4.1.4",
+    "lodash.findkey": "^4.6.0",
+    "lodash.get": "^4.4.2",
+    "mitt": "^2.1.0",
+    "node-global-proxy": "^1.0.1",
+    "ws": "^7.5.0"
+  },
+  "devDependencies": {
+    "pm2": "^5.1.0"
+  }
+}
