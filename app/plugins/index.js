@@ -1,11 +1,11 @@
 const kleur = require('kleur')
-const okexSubscribePublic = require('./okex-subscribe-public')
-const okexSubscribePrivate = require('./okex-subscribe-private')
-const adjustNextPrice = require('./adjust-next-price')
-const printLog = require('./print-log')
-const triggerOrder = require('./trigger-create-order')
+const okexSubscribePublic = require('./okexSubscribePublic')
+const okexSubscribePrivate = require('./okexSubscribePrivate')
+const adjustNextPrice = require('./adjustNextPrice')
+const printLog = require('./printLog')
+const triggerOrder = require('./triggerCreateOrder')
 const messenger = require('./messenger')
-const registerTelegramMessenger = require('./register-telegram-messenger')
+const registerTelegramMessenger = require('./registerTelegramMessenger')
 
 const plugins = [
   okexSubscribePublic,
@@ -27,11 +27,12 @@ exports.applyPlugins = (ctx) => {
       if (typeof plugin.name === 'function') {
         name = plugin.name(ctx)
       }
-      console.log('Apply plugin:', kleur.cyan(name))
+      console.info('Apply plugin:', kleur.cyan(name))
     }
 
     if (plugin.apply) {
       plugin.apply(ctx)
     }
   })
+  console.info()
 }

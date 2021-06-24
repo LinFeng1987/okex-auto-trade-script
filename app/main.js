@@ -1,4 +1,4 @@
-const { setProxy } = require('./utils/set-proxy')
+const { setProxy } = require('./utils/setProxy')
 setProxy()
 
 const _get = require('lodash.get')
