@@ -35,7 +35,7 @@ function calcRunningTime(startTimeMS) {
   let res = `${diffSeconds} 秒`
   if (diffMinutes >= 1) res = `${diffMinutes} 分 ` + res
   if (diffHours >= 1) res = `${diffHours} 时 ` + res
-  if (diffDays >= 1) res = `${diffDays} 时 ` + res
+  if (diffDays >= 1) res = `${diffDays} 天 ` + res
 
   return res
 }
