@@ -9,16 +9,21 @@ const { toFixed, toPercentage } = require('../utils/calc')
 exports.name = '打印交易信息面板'
 
 exports.apply = (ctx) => {
-  const { state, emitter } = ctx
+  const { emitter } = ctx
 
-  emitter.on('ticker', () => {
-    const isDown = state.fluctuationRatio < 0
+  emitter.on('printLog', () => log(ctx))
+  emitter.on('ticker', () => log(ctx))
+}
 
-    const nextBuyAmount = getBuyAmountByCurrentStep(state.currentStep)
-    const nextSellAmount = getSellAmountByCurrentStep(state.currentStep)
+function log({ state }) {
+  const isDown = state.fluctuationRatio < 0
 
-    // prettier-ignore
-    const string = `${kleur.cyan('OKEx')} 自动交易中...
+  const nextBuyAmount = getBuyAmountByCurrentStep(state.currentStep)
+  const nextSellAmount = getSellAmountByCurrentStep(state.currentStep)
+
+  // prettier-ignore
+  const string = `${kleur.cyan('OKEx')} 自动交易中...
+运行时长 ${kleur.cyan(state.runningTime)}
 
 ${kleur.green(state.symbol)}
 最近成交价: ${kleur[state.price < state.sodUTC8 ? 'red' : 'green'](state.price)}
@@ -42,9 +47,8 @@ ${
 ------------------------------
 `
 
-    clearConsole()
-    console.log(string)
-  })
+  clearConsole()
+  console.log(string)
 }
 
 function clearConsole() {

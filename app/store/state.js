@@ -118,6 +118,12 @@ const state = {
    * @description `true` 为仅卖出上次实际到账数量(即扣除手续费后剩余数量) `false` 为始终根据阶级卖出数量
    */
   safeSellAmount: false,
+  /**
+   * 运行时长
+   * @example `1 分 59 秒`
+   * @private
+   */
+  runningTime: '',
 }
 
 exports.state = state

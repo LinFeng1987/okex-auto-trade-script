@@ -6,6 +6,7 @@ const printLog = require('./printLog')
 const triggerOrder = require('./triggerCreateOrder')
 const messenger = require('./messenger')
 const registerTelegramMessenger = require('./registerTelegramMessenger')
+const runningTime = require('./runningTime')
 
 const plugins = [
   okexSubscribePublic,
@@ -16,6 +17,8 @@ const plugins = [
   // 通知
   messenger,
   registerTelegramMessenger,
+  // ---
+  runningTime,
 ]
 
 exports.applyPlugins = (ctx) => {
