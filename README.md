@@ -145,3 +145,13 @@ telegram_bot_chat_id = "chat_id"
 ### 单价差异较大币种切换注意
 
 在切换单价差异较大的币种，如 `BTC` 切换到 `ETH` 是请务必注意你设定的 `basePrice` 是否合理。
+
+## 捐赠
+
+如果你认同本项目，可选考虑捐赠以支持。
+
+| METHOD | ADDRESS                                    |
+| ------ | ------------------------------------------ |
+| BTC    | bc1qa6m9yqe26k223zwak4cmnyv9axq0dxg6thdcuh |
+| ETH    | 0x42f8c423d71dD30b42DA09F6FB8683b6a5a4A524 |
+| Doge   | A2X5K6X4NgYdRvoLkqqp4mptDtcJ88JU1r         |
