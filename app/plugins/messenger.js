@@ -49,7 +49,7 @@ exports.apply = (ctx) => {
     )
   })
   emitter.on('buyOrderCreatedError', (error) => {
-    sendOrderCreatedErrorMessage('买入', error)
+    sendOrderCreatedErrorMessage(ctx, '买入', error)
   })
 
   emitter.on('sellOrderCreated', (sellOrder) => {
@@ -74,11 +74,11 @@ exports.apply = (ctx) => {
     )
   })
   emitter.on('sellOrderCreatedError', (error) => {
-    sendOrderCreatedErrorMessage('卖出', error)
+    sendOrderCreatedErrorMessage(ctx, '卖出', error)
   })
 }
 
-function sendOrderCreatedErrorMessage(side, error) {
+function sendOrderCreatedErrorMessage({ emitter }, side, error) {
   if (error.name === 'InsufficientFunds') {
     emitter.emit(
       'sendMessage',
