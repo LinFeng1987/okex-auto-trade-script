@@ -1,6 +1,6 @@
 # OKEx Auto Trade Script
 
-目前本项目出于开发初期阶段，可能会有部分异常为能处理。
+目前本项目处于开发初期阶段，可能会有部分异常未能处理。
 
 > 在开始使用之前请你必须先**认真**完整阅读这份说明。
 
@@ -105,7 +105,7 @@ npm run start
 
 ### Telegram
 
-打开并切改 `.env` 文件，这两个参数需要在 Telegram 申请机器人获得。你可以 Google 如何申请 Telegram 机器人，很简单。
+打开并修改 `.env` 文件，这两个参数需要在 Telegram 申请机器人获得。你可以 Google 如何申请 Telegram 机器人，很简单。
 
 ```bash
 telegram_bot_token = "token"
