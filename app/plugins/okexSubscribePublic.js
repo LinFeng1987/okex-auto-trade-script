@@ -6,9 +6,9 @@ const { websocketErrorMessageMap } = require('../misc/websocketErrorMessageMap')
 
 exports.name = '订阅 OKEx 行情频道'
 
-exports.apply = (ctx) => subscribePubluc(ctx)
+exports.apply = (ctx) => subscribePublic(ctx)
 
-function subscribePubluc(ctx) {
+function subscribePublic(ctx) {
   const ws = new Websocket('wss://ws.okex.com:8443/ws/v5/public')
 
   const { state, setState, emitter } = ctx
@@ -35,7 +35,7 @@ function subscribePubluc(ctx) {
     ws.send(JSON.stringify(subscribeArg))
   })
 
-  ws.on('error', () => subscribePubluc(ctx))
+  ws.on('error', () => subscribePublic(ctx))
 
   ws.on('message', (msg) => {
     if (msg === 'pong') {
