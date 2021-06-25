@@ -39,9 +39,9 @@ exports.apply = (ctx) => {
     emitter.emit(
       'sendMessage',
       `💵 买入*完成* \`${buyOrder.symbol}\`
-订单 \`${buyOrder.ordId}\`
-买入价 \`${buyOrder.price}\`
-买入数量 \`${buyOrder.amount}\`
+订单 \`${buyOrder.orderId}\`
+买入价 \`${buyOrder.buyPrice}\`
+买入数量 \`${buyOrder.buyAmount}\`
 买入花费 \`${buyOrder.costUSDT}\`
 手续数量 \`${buyOrder.fee}\`
 实得数量 \`${buyOrder.receiveAmount}\`
