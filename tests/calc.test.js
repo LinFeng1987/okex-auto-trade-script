@@ -23,7 +23,7 @@ test('calc min profit USDT price', (t) => {
 
 test('fee ratio', (t) => {
   // taker 0.1%
-  t.is(toRound(calcFeeRatio(0.001, 0.000001)), 0.001)
+  t.is(toRound(calcFeeRatio(0.001, 0.000001), 4), 0.001)
   // maker 0.08%
-  t.is(toRound(calcFeeRatio(0.001, 0.0000008)), 0.0008)
+  t.is(toRound(calcFeeRatio(0.001, 0.0000008), 4), 0.0008)
 })
