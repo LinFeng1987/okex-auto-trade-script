@@ -1,21 +1,29 @@
+const test = require('ava')
+
 const {
   toRound,
   calcPrecision,
   calcFeeRatio,
   calcMinProfitUSDTPrice,
   toCeil,
-  toPercentage,
 } = require('../app/utils/calc')
 
-console.log(calcPrecision(0.01)) // 2
+test('get decimal precision', (t) => {
+  t.is(calcPrecision(0.01), 2)
+  t.is(calcPrecision(0.001), 3)
+})
 
-console.log(toRound(calcFeeRatio(0.001, 0.000001), 4)) // 0.001
-console.log(toRound(calcFeeRatio(0.001, 0.0000008), 4)) // 0.0008
+test('calc min profit USDT price', (t) => {
+  // ETH taker
+  const minProfitUSDTPrice = toCeil(
+    calcMinProfitUSDTPrice(0.002, 0.001, 3.62, 0.1, 0.001)
+  )
+  t.is(minProfitUSDTPrice, 1863.73)
+})
 
-console.log(toCeil(calcMinProfitUSDTPrice(0.001, 0.001, 1.94, 0.01, 0.001))) // 1953.91
-console.log(toCeil(calcMinProfitUSDTPrice(0.002, 0.0008, 3.79, 0.01, 0.001))) // 1903.05
-// 1858.21
-console.log(toCeil(calcMinProfitUSDTPrice(0.003, 0.0008, 5.57, 0.01, 0.001))) // 1862.98
-
-console.log(toCeil(5 / 4))
-console.log(toPercentage(1))
+test('fee ratio', (t) => {
+  // taker 0.1%
+  t.is(toRound(calcFeeRatio(0.001, 0.000001)), 0.001)
+  // maker 0.08%
+  t.is(toRound(calcFeeRatio(0.001, 0.0000008)), 0.0008)
+})
