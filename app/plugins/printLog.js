@@ -30,21 +30,21 @@ ${kleur.green(state.symbol)}
 UTC8 开盘价: ${kleur.cyan(state.sodUTC8)}\t\t涨跌%: ${kleur[isDown ? 'red' : 'green']((isDown ? '' : '+') + toPercentage(state.fluctuationRatio) + '%')}
 24 小时最高价: ${kleur.cyan(state.high24h)}\t\t24 小时最低价: ${kleur.cyan(state.low24h)}
 
-------------------------------
+------------------------------------------
 
 当前买入阶级: ${kleur.cyan(state.currentStep)}\t\t\t允许最大买入阶级: ${kleur.cyan(state.maxStep)}
 ${
   nextBuyAmount
-    ? `下次触发买入价格: ${kleur.green(toFixed(state.nextBuyPrice))}\t买入数量: ${kleur.green(nextBuyAmount)}`
+    ? `${kleur.bold('预计')}下次触发买入价格: ${kleur.green(toFixed(state.nextBuyPrice))}\t买入数量: ${kleur.green(nextBuyAmount)}`
     : kleur.bold('已达到最大买入阶级，暂停买入')
 }
 ${
   nextSellAmount
-    ? `下次触发卖出价格: ${kleur.red(toFixed(state.nextSellPrice))}\t卖出数量: ${kleur.green(nextSellAmount)}`
+    ? `${kleur.bold('预计')}下次触发卖出价格: ${kleur.red(toFixed(state.nextSellPrice))}\t卖出数量: ${kleur.green(nextSellAmount)}`
     : kleur.bold('买入阶级为0，不卖出')
 }
 
-------------------------------
+------------------------------------------
 `
 
   clearConsole()

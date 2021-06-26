@@ -10,11 +10,20 @@ exports.name = (ctx) => {
 }
 
 exports.apply = (ctx) => {
-  const { emitter } = ctx
+  const { state, setState, orders, emitter } = ctx
 
   emitter.on('buyOrderCreated', (buyOrder) => {
     adjustNextPrice(ctx, buyOrder.buyPrice)
   })
+  emitter.on('buyOrderFinished', (buyOrder) => {
+    const minProfitUSDTPrice = orders[buyOrder.orderId].minProfitUSDTPrice
+    if (state.nextSellPrice < minProfitUSDTPrice) {
+      setState({
+        nextSellPrice: minProfitUSDTPrice,
+      })
+    }
+  })
+
   emitter.on('sellOrderCreated', (sellOrder) => {
     adjustNextPrice(ctx, sellOrder.sellPrice)
   })

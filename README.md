@@ -7,7 +7,7 @@
 ## 协议
 
 - **个人使用遵守 [GNU GPL 3.0](./LICENSE)**
-- **商业使用必须咨询作者以获得商业授权!**
+- **商业使用必须咨询作者以获得商业授权**
 
 ## 免责声明
 
@@ -23,9 +23,10 @@
 
 ## 特点
 
-- [x] 易用
+- [x] 易用，JSON 文件配置
 - [x] 安全交易，不先买入则不卖出
-- [x] 根据涨跌比率调整买入卖出价
+- [x] 可设置根据行情涨跌比率调整买入卖出价
+- [x] 可设置每单买卖最小盈利 USDT 数量，用于保证盈利
 
 ## 开始使用
 
@@ -114,7 +115,7 @@ telegram_bot_chat_id = "chat_id"
 
 通知如图所示
 
-![](https://cdn.jsdelivr.net/gh/evillt/github-itself-image-hosting-service@main/uPic/xCKQWMdSYboQ.png)
+![](https://cdn.jsdelivr.net/gh/evillt/github-itself-image-hosting-service@main/uPic/R2PZ0iOpeoy5.png)
 
 ## 注意事项
 
@@ -122,7 +123,7 @@ telegram_bot_chat_id = "chat_id"
 
 在刚开始使用本项目时，建议你设置购买数量 `amounts` 比较小的值，防止风险，但也尽量避免是目标币种的最小交易数量，理由阅读下面一条注意事项；待你觉得可行的时候再适当调节。
 
-### 慎用最小盈利 USDT 参数
+### 最小盈利 USDT 数量
 
 最小盈利 USDT `minProfitUSDT` 本意是让你的每一单至少盈利你设定的 USDT 数量，包括手续费扣除；实际上该以什么价位卖出非常难算，目前测试还算正常，但尽量不要依靠此参数，你可以适当提高 `amounts` 可以避免。
 
@@ -148,10 +149,11 @@ telegram_bot_chat_id = "chat_id"
 
 ## 捐赠
 
-如果你认同本项目，可选考虑捐赠以支持。
+如果你认同本项目或对你有帮助，不妨考虑捐赠以支持我。
 
-| METHOD | ADDRESS                                    |
-| ------ | ------------------------------------------ |
-| BTC    | bc1qa6m9yqe26k223zwak4cmnyv9axq0dxg6thdcuh |
-| ETH    | 0x42f8c423d71dD30b42DA09F6FB8683b6a5a4A524 |
-| Doge   | A2X5K6X4NgYdRvoLkqqp4mptDtcJ88JU1r         |
+| METHOD | ADDRESS                                                                                                       |
+| ------ | ------------------------------------------------------------------------------------------------------------- |
+| BTC    | bc1qa6m9yqe26k223zwak4cmnyv9axq0dxg6thdcuh                                                                    |
+| ETH    | 0x42f8c423d71dD30b42DA09F6FB8683b6a5a4A524                                                                    |
+| DOGE   | A2X5K6X4NgYdRvoLkqqp4mptDtcJ88JU1r                                                                            |
+| CNY    | WECHAT ![](https://cdn.jsdelivr.net/gh/evillt/github-itself-image-hosting-service@main/uPic/kHzLd4nVsC5O.png) |

@@ -96,7 +96,7 @@ function subscribePrivate(ctx) {
                   const fee = Math.abs(Number(obj.fee))
                   const receiveAmount = orders[orderId].amount - fee
 
-                  // e.g. `0.0008 = 0.08%`
+                  // 保留 4 位小数 e.g. `0.0008 = 0.08%`
                   const feeRatio = toRound(
                     calcFeeRatio(orders[orderId].amount, fee),
                     4
@@ -131,6 +131,7 @@ function subscribePrivate(ctx) {
                   })
                 }
                 if (obj.side === 'sell') {
+                  console.log('mark:sellOrderFinished')
                   emitter.emit('sellOrderFinished', {
                     symbol,
                     orderId,
