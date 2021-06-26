@@ -1,6 +1,5 @@
 require('dotenv').config()
 const { default: axios } = require('axios')
-const kleur = require('kleur')
 
 const token = process.env.telegram_bot_token
 const chat_id = process.env.telegram_bot_chat_id

@@ -1,4 +1,5 @@
 const kleur = require('kleur')
+const ping = require('./ping')
 const okexSubscribePublic = require('./okexSubscribePublic')
 const okexSubscribePrivate = require('./okexSubscribePrivate')
 const adjustNextPrice = require('./adjustNextPrice')
@@ -9,6 +10,7 @@ const registerTelegramMessenger = require('./registerTelegramMessenger')
 const runningTime = require('./runningTime')
 
 const plugins = [
+  ping,
   okexSubscribePublic,
   okexSubscribePrivate,
   adjustNextPrice,

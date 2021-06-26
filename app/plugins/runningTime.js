@@ -9,12 +9,12 @@ exports.apply = (ctx) => {
   const { setState, emitter } = ctx
   const startTimeMS = Date.now()
 
-  setInterval(() => {
+  emitter.on('ping', () => {
     setState({
       runningTime: calcRunningTime(startTimeMS),
     })
     emitter.emit('printLog')
-  }, 1000)
+  })
 }
 
 function calcRunningTime(startTimeMS) {
