@@ -5,9 +5,9 @@ const okexSubscribePrivate = require('./okexSubscribePrivate')
 const adjustNextPrice = require('./adjustNextPrice')
 const printLog = require('./printLog')
 const triggerOrder = require('./triggerCreateOrder')
-const messenger = require('./messenger')
-const registerTelegramMessenger = require('./registerTelegramMessenger')
-const registerDingtalkMessenger = require('./registerDingtalkMessenger')
+const notification = require('./notification')
+const registerTelegramNotification = require('./registerTelegramNotification')
+const registerDingtalkNotification = require('./registerDingtalkNotification')
 const runningTime = require('./runningTime')
 
 const plugins = [
@@ -18,9 +18,9 @@ const plugins = [
   printLog,
   triggerOrder,
   // 通知
-  messenger,
-  registerTelegramMessenger,
-  registerDingtalkMessenger,
+  notification,
+  registerTelegramNotification,
+  registerDingtalkNotification,
   // ---
   runningTime,
 ]

@@ -11,7 +11,7 @@ exports.when = () => token && chat_id
 
 exports.apply = (ctx) => {
   const { emitter } = ctx
-  emitter.emit('collectMessenger', { sendMessage })
+  emitter.emit('collectNotifier', { sendMessage })
 }
 
 function sendMessage(text) {

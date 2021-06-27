@@ -6,7 +6,7 @@ exports.apply = (ctx) => {
   const { emitter } = ctx
   const messengers = []
 
-  emitter.on('collectMessenger', (messenger) => messengers.push(messenger))
+  emitter.on('collectNotifier', (notifier) => messengers.push(notifier))
 
   emitter.on('sendMessage', (text) => {
     Promise.all(messengers.map(({ sendMessage }) => sendMessage(text)))

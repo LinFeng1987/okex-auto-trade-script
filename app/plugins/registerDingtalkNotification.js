@@ -11,7 +11,7 @@ exports.name = '注册 钉钉 通知'
 exports.when = () => token && secret
 
 exports.apply = (ctx) => {
-  ctx.emitter.emit('collectMessenger', { sendMessage })
+  ctx.emitter.emit('collectNotifier', { sendMessage })
 }
 
 function sendMessage(text) {
