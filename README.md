@@ -125,7 +125,7 @@ telegram_bot_chat_id = "chat_id"
 
 ### 最小盈利 USDT 数量
 
-最小盈利 USDT `minProfitUSDT` 本意是让你的每一单买卖都能最小盈利你设定的 USDT 数量以避免不会亏，但并**不建议**依靠此功能。其中包括手续费等各项扣除计算，最终得出合适的卖出价位并变更下次卖出价格，实际盈利可能会有略微偏差，你可以适当提高 `amounts` 或提高 `baseDecreaseRatio` 和 `baseIncreaseRatio` 来避免。
+最小盈利 USDT `minProfitUSDT` 本意是让你的每一单买卖都能最小盈利你设定的 USDT 数量以避免亏本买卖，但并**不建议**依靠此功能。其中包括手续费等各项扣除计算，最终得出合适的卖出价位并变更下次卖出价格，实际盈利可能会有略微偏差，你可以适当提高 `amounts` 或提高 `baseDecreaseRatio` 和 `baseIncreaseRatio` 来避免。
 
 ### 买入手续费可能是挂单或吃单
 
