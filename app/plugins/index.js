@@ -7,6 +7,7 @@ const printLog = require('./printLog')
 const triggerOrder = require('./triggerCreateOrder')
 const messenger = require('./messenger')
 const registerTelegramMessenger = require('./registerTelegramMessenger')
+const registerDingtalkMessenger = require('./registerDingtalkMessenger')
 const runningTime = require('./runningTime')
 
 const plugins = [
@@ -19,6 +20,7 @@ const plugins = [
   // 通知
   messenger,
   registerTelegramMessenger,
+  registerDingtalkMessenger,
   // ---
   runningTime,
 ]

@@ -27,6 +27,7 @@
 - [x] 安全交易，不先买入则不卖出
 - [x] 可设置根据行情涨跌比率调整买入卖出价
 - [x] 可设置每单买卖最小盈利 USDT 数量，用于保证盈利
+- [x] 支持 Telegram 和 钉钉 交易通知
 
 ## 开始使用
 
@@ -103,6 +104,10 @@ npm run start
 ![](https://cdn.jsdelivr.net/gh/evillt/github-itself-image-hosting-service@main/uPic/Xnip2021-06-24_18-37-15uiF0BG.jpg)
 
 ## 事件通知
+
+### 钉钉
+
+请阅读 [如何开启钉钉交易通知](https://www.notion.so/2nthony/d5c833cf41214448bfc73191b36a5aef)
 
 ### Telegram
 
