@@ -6,7 +6,7 @@ const token = process.env.dingtalk_bot_access_token
 const secret = process.env.dingtalk_bot_secret
 const url = `https://oapi.dingtalk.com/robot/send`
 
-exports.name = '注册 钉钉 通知'
+exports.name = '通知到 钉钉'
 
 exports.when = () => token && secret
 

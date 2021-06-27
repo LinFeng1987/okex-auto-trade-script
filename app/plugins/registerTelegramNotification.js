@@ -5,7 +5,7 @@ const token = process.env.telegram_bot_token
 const chat_id = process.env.telegram_bot_chat_id
 const url = `https://api.telegram.org/bot${token}`
 
-exports.name = '注册 Telegram 通知'
+exports.name = '通知到 Telegram'
 
 exports.when = () => token && chat_id
 
