@@ -125,7 +125,7 @@ telegram_bot_chat_id = "chat_id"
 
 ### 最小盈利 USDT 数量
 
-最小盈利 USDT `minProfitUSDT` 本意是让你的每一单至少盈利你设定的 USDT 数量，包括手续费扣除；实际上该以什么价位卖出非常难算，目前测试还算正常，但尽量不要依靠此参数，你可以适当提高 `amounts` 可以避免。
+最小盈利 USDT `minProfitUSDT` 本意是让你的每一单买卖都能最小盈利你设定的 USDT 数量以避免不会亏，但并**不建议**依靠此功能。其中包括手续费等各项扣除计算，最终得出合适的卖出价位并变更下次卖出价格，实际盈利可能会有略微偏差，你可以适当提高 `amounts` 或提高 `baseDecreaseRatio` 和 `baseIncreaseRatio` 来避免。
 
 ### 买入手续费可能是挂单或吃单
 
@@ -156,5 +156,6 @@ telegram_bot_chat_id = "chat_id"
 | BTC                                                                                                    | bc1qa6m9yqe26k223zwak4cmnyv9axq0dxg6thdcuh                                                                                                    |
 | ETH                                                                                                    | 0x42f8c423d71dD30b42DA09F6FB8683b6a5a4A524                                                                                                    |
 | DOGE                                                                                                   | A2X5K6X4NgYdRvoLkqqp4mptDtcJ88JU1r                                                                                                            |
+| -                                                                                                      | -                                                                                                                                             |
 | WECHAT                                                                                                 | ALIPAY                                                                                                                                        |
 | ![](https://cdn.jsdelivr.net/gh/evillt/github-itself-image-hosting-service@main/uPic/kHzLd4nVsC5O.png) | ![](https://cdn.jsdelivr.net/gh/evillt/github-itself-image-hosting-service@main/uPic/A2DE0600-980B-4074-B203-615F64DC3CD2_1_201_ajyJSzp.jpeg) |
