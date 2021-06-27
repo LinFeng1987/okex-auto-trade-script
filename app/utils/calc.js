@@ -53,7 +53,12 @@ exports.calcFeeRatio = (amount, deductedAmount) => {
 }
 
 exports.calcPrecision = (price) => {
-  const str = String(price)
-  const [, n] = str.split('.')
-  return n.length
+  let precision = 0
+
+  while (price < 1) {
+    price *= 10
+    precision++
+  }
+
+  return precision
 }

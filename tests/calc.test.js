@@ -8,9 +8,10 @@ const {
   toCeil,
 } = require('../app/utils/calc')
 
-test('get decimal precision', (t) => {
+test('calc precision', (t) => {
   t.is(calcPrecision(0.01), 2)
   t.is(calcPrecision(0.001), 3)
+  t.is(calcPrecision(1e-8), 8)
 })
 
 test('calc min profit USDT price', (t) => {
