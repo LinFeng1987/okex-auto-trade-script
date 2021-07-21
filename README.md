@@ -107,7 +107,7 @@ npm run start
 
 ### 钉钉
 
-请阅读 [如何开启钉钉交易通知](https://www.notion.so/2nthony/d5c833cf41214448bfc73191b36a5aef)
+请阅读 [如何开启钉钉交易通知](https://2nthony.notion.site/66c43cd0d9054a6b98adb1798055eef3)
 
 ### Telegram
 
