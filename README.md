@@ -156,12 +156,16 @@ telegram_bot_chat_id = "chat_id"
 
 如果你认同本项目或对你有帮助，不妨考虑捐赠以支持我。
 
-| METHOD                                                                                                 | ADDRESS                                                                                                                                       |
-| ------------------------------------------------------------------------------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------- |
-| BTC                                                                                                    | bc1qa6m9yqe26k223zwak4cmnyv9axq0dxg6thdcuh                                                                                                    |
-| ETH                                                                                                    | 0x42f8c423d71dD30b42DA09F6FB8683b6a5a4A524                                                                                                    |
-| DOGE                                                                                                   | A2X5K6X4NgYdRvoLkqqp4mptDtcJ88JU1r                                                                                                            |
-| -                                                                                                      | -                                                                                                                                             |
-| -                                                                                                      | -                                                                                                                                             |
-| WECHAT                                                                                                 | ALIPAY                                                                                                                                        |
-| ![](https://cdn.jsdelivr.net/gh/evillt/github-itself-image-hosting-service@main/uPic/kHzLd4nVsC5O.png) | ![](https://cdn.jsdelivr.net/gh/evillt/github-itself-image-hosting-service@main/uPic/A2DE0600-980B-4074-B203-615F64DC3CD2_1_201_ajyJSzp.jpeg) |
+| METHOD | ADDRESS                                    |
+| ------ | ------------------------------------------ |
+| BTC    | bc1qa6m9yqe26k223zwak4cmnyv9axq0dxg6thdcuh |
+| ETH    | 0x42f8c423d71dD30b42DA09F6FB8683b6a5a4A524 |
+| DOGE   | A2X5K6X4NgYdRvoLkqqp4mptDtcJ88JU1r         |
+
+## Sponsors
+
+[![sponsors](https://cdn.jsdelivr.net/gh/2nthony/sponsors-image/sponsors.svg)](https://github.com/sponsors/2nthony)
+
+## LICENSE
+
+GNU GPL 3.0 © [2nthony](https://github.com/2nthony)
