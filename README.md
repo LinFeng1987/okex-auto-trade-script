@@ -101,7 +101,7 @@ npm run start
 
 随后你会看到如下界面，证明它在运行中。
 
-![](https://cdn.jsdelivr.net/gh/2nthony/github-itself-image-hosting-service@main/uPic/iEqbNdN2qkqv.png)
+![](https://cdn.jsdelivr.net/gh/2nthony/github-itself-image-hosting-service@main/uPic/fvCujfB6fN8G.png)
 
 如果你相信这个脚本，那么可以将它扔在服务并让它一直运行。
 
