@@ -99,9 +99,11 @@ http_proxy = "http://127.0.0.1:7892"
 npm run start
 ```
 
-随后你会看到如下界面
+随后你会看到如下界面，证明它在运行中。
 
-![](https://cdn.jsdelivr.net/gh/evillt/github-itself-image-hosting-service@main/uPic/Xnip2021-06-24_18-37-15uiF0BG.jpg)
+![](https://cdn.jsdelivr.net/gh/2nthony/github-itself-image-hosting-service@main/uPic/iEqbNdN2qkqv.png)
+
+如果你相信这个脚本，那么可以将它扔在服务并让它一直运行。
 
 ## 事件通知
 
@@ -120,7 +122,7 @@ telegram_bot_chat_id = "chat_id"
 
 通知如图所示
 
-![](https://cdn.jsdelivr.net/gh/evillt/github-itself-image-hosting-service@main/uPic/R2PZ0iOpeoy5.png)
+![](https://cdn.jsdelivr.net/gh/2nthony/github-itself-image-hosting-service@main/uPic/R2PZ0iOpeoy5.png)
 
 ## 注意事项
 
